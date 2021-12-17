@@ -79,7 +79,7 @@ async function ProgressGamestate() {
     await addResponse(text[0], false, false);
     await showResponseOptions(text[1]);
   }else if(!unlocked){
-    let answerString = errors > 1 ? "answers" : "answer";
+    let answerString = errors == 1 ? "answer" : "answers";
     await addResponse(`Thanks for playing! You gave ${errors} incorrect ${answerString}. <BR> You now unlcocked all the commands, type ls/dir to show them.`, false, false);
     unlocked = true;
   }
