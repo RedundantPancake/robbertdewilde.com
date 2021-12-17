@@ -1,4 +1,4 @@
-const version = "v0.8.2";
+const version = "v0.8.3";
 const debug = false;
 const thinkTime = 1500;
 let unlocked = false;

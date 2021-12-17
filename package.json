@@ -4,7 +4,7 @@
   "description": "cool personal website",
   "main": "dist/index.html",
   "scripts": {
-    "build": "tsc src/index.ts --watch --outDir dist && npm run build:cp-public",
+    "build": "npm run build:cp-public && tsc src/index.ts --watch --outDir dist",
     "build:cp-public": "xcopy public dist /Y",
     "type": "tsc --noEmit",
     "start": "npm run build && npm run open",
