@@ -8,24 +8,24 @@ let errors : number = 0;
 const randomErrorResponses = ["Hmmmm no", "I'd rahter not.", "I don't want to do that.", "Nah.", "That doesn't go there..."];
 
 const gameState : Array<[string, Array<string>, Array<string>, number, Array<number>]>= [
-  ["In order to access the data I need some help, are you willing to help me human?", 
+  ["<BR> In order to access the data I need some help, are you willing to help me human?", 
     ["yes", "no"], ["Outstanding!", "I don't undestand sarcasm."], 0, [1]
   ],
-  [`I'm going to ask you a series of 5 questions. Answer them all correctly and unlock this very cool data I have on Robbert. <br> 
+  [`<BR> I'm going to ask you a series of 5 questions. Answer them all correctly and unlock this very cool data I have on Robbert. <br> 
     1. What is the answer to life, the universe, and everything`, 
     ["1337", "42"], ["I'm questioning everything right now.", "Well, that was easy. ON TO THE NEXT ONE!"], 1, [0]
   ],
-  ["2. In Doom (1993) what is the cheat code for god mode?", 
+  ["<BR> 2. In Doom (1993) what is the cheat code for god mode?", 
       ["idclip", "idkfa", "iddqd"], ["Wallhacks!", "You unlocked all weapons instead.", "Degreelessness mode on!"], 2, [0, 1]
   ],
-  ["3. Which video game developer made adventure games in which you could die?", 
+  ["<BR> 3. Which video game developer made adventure games in which you could die?", 
     ["Sierra", "LucasArts", "Blizzard"], ["Yep, some pretty hillarious deaths too.", "Quite the opposite. Their philosophy was that the player shouldn't die.", "Warcraft Adventures: Lord of the Clans, the game that could have been."], 0, [1, 2]
   ],
-  ["4. What are the metal objects called that are connected to a skateboard. Used for'grinding'.", 
+  ["<BR> 4. What are the metal objects called that are connected to a skateboard. Used for'grinding'.", 
     ["Vans", "Trucks", "Bars", "Pegs"], ["Nice shoes, but nope!", "Indeed! Although I don't know why. ", "Candy bars. Spittin bars. Drinking at bars. Nope.", "These are used on BMX bikes to 'grind' with."], 1, [0, 2, 3]
   ]
   ,
-  ["5. Who holds the current all-time record for most 3 points made in the NBA?", 
+  ["<BR> 5. Who holds the current all-time record for most 3 points made in the NBA?", 
     ["Lebron James", " Kobe Bryant", "Kevin Durant", "Stephen Curry", "Ray Allen"], ["A goat but nope!", "RIP... nope", "He wishes he never left the team with the person who just broke this record.", "Yep! The best shooter ever to shoot a basketball. And he is not even close to being done.", "Close, he is currently number 2. Recently passed by another person."], 3, [0, 1, 2, 4]
   ]
 ];
@@ -214,7 +214,7 @@ async function addResponse(input :string, isError :boolean, isInputFromPlayer :b
 }
 
 async function showResponseOptions(responsestrings: string[]) {
-  let response = "options: ";
+  let response = "options: <BR> ";
   for(let i = 0; i < responsestrings.length; i ++){
     response += `[${i}] ${responsestrings[i]} &emsp;`;
   }
@@ -283,7 +283,7 @@ async function checkFunnyCommands(input : string) : Promise<string> {
   if(input.startsWith("cd"))
     returnString = "Compact Disk? What about it..";
   else if(input.startsWith("ls") || input.startsWith("dir")) 
-    returnString = "How about a list of commands: <br> [socials] &emsp; [fact] &emsp; [party]/[rainbow] &emsp; <br>There are some more but I they seem to be hidden."  ; //TODO put in const array
+    returnString = "How about a list of commands: <br> [socials] &emsp; [fact] &emsp; [party]/[rainbow] &emsp; <br> <br> There are some more but I they seem to be hidden."  ; //TODO put in const array
   else if(input.startsWith("rainbow") || input.startsWith("party"))
   {
     returnString = StartOrStopRainbow();    
